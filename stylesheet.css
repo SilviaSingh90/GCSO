@@ -1,0 +1,291 @@
+@charset "utf-8";
+/* CSS Document */
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 2rem;
+  background-image: url("../images/white.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.navbar {
+  background-color: #F5F5F5;
+}
+
+.container {
+	min-height: 100%;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+
+.col-md-4 {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.content {
+  background-color: white;
+  margin-bottom: 15px;
+  padding: 20px;
+  box-shadow: 5px 5px 5px dimgray;
+}
+
+h1 {
+	color: black;
+	font-family: 'Prata', serif;
+	text-align: center;
+	font-size: 80px;
+}
+
+h2 {
+  color: black;
+	font-family: 'Ruthie', cursive;
+	text-align: center;
+}
+
+p, a {
+  color: black;
+font-family: 'Quicksand', sans-serif;
+  text-align: justify;
+  margin-bottom: 1px;
+}
+
+a:hover {
+  color: red;
+  text-decoration: overline;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: gray;
+  color: white;
+}
+
+.col-sm-8 {
+  background-color: #ddd;
+}
+
+.col-sm:nth-of-type(2n+1) {
+  background-color: #bbb;
+}
+
+footer {
+	margin-top: 100px;
+	position:fixed;
+	width: 100%;
+	align-content: center;
+	bottom: 0;
+}
+
+footer p{ 
+  position: relative;
+  bottom: 0;
+  font-size: 15px;
+  padding: 0px;
+  margin: 0px;
+  background-color:white;
+  opacity: 0.5;
+  text-align: center;
+}
+
+
+/* 3d transform */
+#transform3d {
+  transform: rotateY(0deg);
+  transition: all ease-out 2s;
+}
+#transform3d:hover {
+  transform: rotateY(-180deg);
+}
+
+/*css for html5animation*/
+#html5transition2 {
+  transition: all ease-out 2s;
+  opacity: 1;
+}
+#html5transition2:hover {
+  opacity: 0.1;
+}
+
+/*css for html5animation*/
+#html5transition {
+  transition: all ease-out 2s;
+  opacity: 1;
+}
+#html5transition:hover {
+  opacity: 0.1;
+}
+
+/* 2d transform */
+#css3transform {
+  transform: rotate(00deg);
+  transition: all ease-out 2s;
+}
+#css3transform:hover {
+  transform: rotate(-180deg);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* My Name Keyframe Animation */
+.line-1 {
+  position: relative;
+  top: 50%;
+  width: 10em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, .75);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.anim-typewriter {
+  animation: typewriter 3s steps(16) 1s 1 normal both, blinkTextCursor 500ms steps(16) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: #6A0305;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* Animation Car Exercise */
+#movingcar {
+	position:relative;
+  padding-top: 10px;
+  background-color: dimgray;
+
+}
+#car {
+  position: relative;
+  transition: all 2s ease-in-out;
+}
+.translateLeft {
+  transform: translateX(-300px);
+}
+.translateRight {
+  transform: translateX(300px);
+}
+
+
+/* Gallery picgrid */
+
+#picgrid {
+    max-width:1200px;
+    margin:0 auto; /*center aligned*/
+    padding:0;
+    font-size:0; /* Remember to change it back to normal font size if have captions */
+    list-style:none;
+    background-color:#ffffff;
+	margin-bottom: 100px;
+}
+#picgrid li {
+    display: inline-block;
+    *display:inline;/*for IE6 - IE7*/
+    width:25%;
+    vertical-align:middle;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+        
+/* The wrapper for each item */
+.picgrid-cell {
+    /*margin:12px;
+    box-shadow:0 0 6px rgba(0,0,0,0.3);*/
+    display:block;
+    position: relative;
+    overflow:hidden;
+}
+        
+/* If have the image layer */
+.picgrid-img {
+    display:block;
+    width: 100%;
+    height: auto;
+    border:none;
+    transform:scale(1);
+    transition:all 5s;
+}
+
+#picgrid li:hover .picgrid-img {
+    transform:scale(5.05);
+}
+        
+/* If have the overlay layer */
+.picgrid-overlay {
+    position: absolute;
+    display:block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: #570204 url(img/link.png) no-repeat center 20%;
+    background-size:100px 100px;
+    opacity:0;
+    filter:alpha(opacity=0);/*For IE6 - IE8*/
+    transition:all 0.6s;
+}
+#picgrid li:hover .picgrid-overlay {
+    opacity:0.9;
+}
+
+/* If have captions */
+.picgrid-text {
+    display:block;
+    padding:0 30px;
+    box-sizing:border-box;
+    position:absolute;
+    left:0;
+    width:100%;
+    text-align:center;
+    text-transform:capitalize;
+    font-size:30px;
+    font-weight:bold;
+    font-family: 'Raleway', sans-serif;
+    top:40%;
+    color:white;
+    opacity:0;
+    filter:alpha(opacity=0);/*For older IE*/
+    transform:translateY(-20px);
+    transition:all .3s;
+}
+#picgrid li:hover .picgrid-text {
+    transform:translateY(0px);
+    opacity:0.80;
+}
+
+@media (max-width: 9000px) {
+    #picgrid li {
+        width:25%;
+    }
+}
+
+@media (max-width: 700px) {
+    #picgrid li {
+        width:33.33%;
+    }
+}
+
+@media (max-width: 550px) {
+    #picgrid li {
+        width:50%;
+    }
+}
+
+@media screen and (max-width: 1500px) {  }

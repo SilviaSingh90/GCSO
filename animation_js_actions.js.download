@@ -1,0 +1,17 @@
+// JavaScript Document
+/* animation_js_actions.js */
+
+$(document).on('click', '#triggerLeft', function(event){
+	console.log("left");
+    $('#car').removeClass();
+    $('#car').addClass('translateLeft');
+  });
+
+  $(document).on('click', '#triggerRight', function(event){
+    $('#car').removeClass();
+    $('#car').addClass('translateRight');
+  });
+  //can you guess what this does?
+  $(document).on('click', '#car', function(event){
+    $('#car').removeClass();
+  });
